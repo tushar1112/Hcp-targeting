@@ -1,0 +1,11 @@
+# How the raw data was obtained
+- Source: CMS Medicare Part D Prescribers, by Provider and Drug, and by Provider (data.cms.gov)
+- Years: 2021, 2022, 2023, 2024
+- Download addresses were taken from the CMS dataset catalog (data.cms.gov/data.json)
+- data.cms.gov blocked direct access from my location, so the download ran in Google Colab
+- Script: src/download_sglt2_colab.py
+- Filter: drug-level rows where the generic name contains "gliflozin" (SGLT2 class)
+- By-Provider rows: only prescribers who appear in the filtered drug-level data
+- All columns stored as text; numeric conversion happens in the cleaning step
+- Date downloaded: (today's date)
+- Raw files are not committed to Git (see .gitignore)
